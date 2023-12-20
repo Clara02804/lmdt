@@ -1,0 +1,638 @@
+/*----------GESTION DES TAILLES D'ÉCRAN----------*/
+
+
+/* -------- POLICES ET COULEURS ----------- */
+
+
+@font-face {
+	font-family: "Amiamie Round";
+	src: url("fonts/Amiamie-RegularRound.woff") format("woff");
+}
+@font-face {
+	font-family: "Amiamie Round";
+	src: url("fonts/Amiamie-RegularRound.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Amiamie Black Round";
+	src: url("fonts/Amiamie-BlackRound.woff") format("woff");
+}
+@font-face {
+	font-family: "Amiamie Black Round";
+	src: url("fonts/Amiamie-BlackRound.otf") format("opentype");
+}
+
+
+
+/*  Gris : #f7fbfa;
+	Violet :#b45eff;
+	Vert : #2ad69b;
+	Vert clair: #2ad69b80; je savais pas comment réduire l'opacité donc j'ai bricolé une couleur light*/
+
+
+/* ----------- PAGE ACCUEIL --------- */
+
+body {
+	/*background-color: rgba(173,125,251,0.08);*/
+	background-color: #f7fbfa;
+	font-family: "Amiamie Round";
+	font-size: 16px;
+	height:100vh;
+	overflow:hidden;
+	box-sizing: border-box;
+}
+
+a:hover {
+	color:#2ad69b;
+}
+
+/*  ---------- AREA A - Texte  ---------- */
+
+#areaA {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	height: 100vh;
+	width:40vw;
+  	background-color: #f7fbfa;
+}
+
+.logo {
+    position: absolute;
+    width: 60%;
+    margin-top:20px;
+}
+
+.logo > img {
+	width: 100%;
+}
+
+.scroller {
+	position:absolute;
+	top:240px;
+	bottom:0px;
+	right:35px;
+	overflow:auto;
+	margin-left:35px;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;   			 /* modifié par clara */
+    scrollbar-color: #2ad69b #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #2ad69b;
+    border-radius: 21px;
+    border: 5px solid #ffffff;
+  }
+
+
+.texte {
+	letter-spacing: 0.01em;
+	width: 90%;
+	line-height: 20px;
+	float: left;
+}
+
+.textevert {
+	color:#2ad69b;
+}
+
+.smalltext {
+	font-family: "Amiamie Round";
+	font-size:13px;
+	margin-top: 30px;
+	line-height: 15px;
+}
+
+::selection {
+ background:  #2ad69b; 
+}
+ 
+ ::-moz-selection {
+ background:  #2ad69b;
+}
+
+/*  ---------- AREA B - Liens  ---------- */
+
+#areaB {
+	position:absolute;
+	bottom:0px;
+	width:40vw;
+/*	left:40vw;*/
+right:0vw;
+	height:100vh;
+  	background-color: #2ad69b80;
+  	overflow:auto;
+/* comment faire pour cacher l'overflow ou le mettre de la même couleur? si je le hidden ça ne scroll plus, mais là ça fait une bande blanche bizarre. ou ajouter une scrollbar à l'intérieur*/
+ 	box-sizing:border-box;
+/* 	border-right: 10px solid #2ad69b;*/
+ 	border-left: 10px solid #b45eff;
+}
+
+/*Les tw et titre étaient en display none, j'ai corrigé et mis le titre en bold (comme les titres de l'area C). Le fond blanc du tw est pas ouf mais c'était pour faire une démarquation. Cette partie là est globalement bof esthétique (tw/titre/ressources)... */
+.tw {
+	font-family: "Amiamie Black Round";
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: underline;
+	padding-top: 10px;
+	padding-bottom:5px;
+	z-index:1;
+	padding-left:20px;
+	padding-right: 20px;
+/*	background-color:#f7fbfa;*/
+}
+
+.title {
+	font-family: "Amiamie Black Round";
+	color:white;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 20px;
+	margin-top:30px;
+	margin-bottom: 10px;
+}
+
+.ressources {
+	position: relative;
+	display: block;
+	text-align: center;
+	display: auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.liste {
+	position: relative;
+	top:100px;
+	bottom:0px;
+	margin-left:5vw;
+	text-align: left;
+  margin-bottom:400px;
+}
+
+/*Je pense que les affiches pourraient être en 90%, centré dans la colonne. J'ai remis un fond coloré pour ajouter un peu de consistance*/
+.affiches {
+	position: relative;
+/* margin-left:6vw; */
+	display: block;
+/*	margin-top:30px;*/
+	height:auto;
+	margin-bottom: 75px;
+	width: 90%;
+	margin:auto;
+}
+
+.affiches > div {
+	width:auto;
+	position: relative;
+/*	margin-right:3.5%;*/
+	display: block;
+	vertical-align: middle;
+}
+
+.affichespaysage {
+	position: relative;
+/*	margin-left:6vw;*/
+	display: block;
+	margin-top:10px;
+	height:500px;
+	margin-bottom: 10vw;
+		width: 90%;
+	margin:auto;
+}
+
+.affichespaysage > div {
+/*	width:40vw;*/
+	position: absolute;
+/*	margin-right:3.5%;*/
+	display: block;
+	vertical-align: middle;
+}
+
+
+ul a:hover {
+	/*color: #be7eff;*/
+	/* color:#76ff93; */
+	color:#2ad69b;   			 /*modifié par clara*/
+}
+
+/* --------- SLIDE IMAGES --------- */
+.mySlides {
+	display: none;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	font-weight: bold;
+	font-size: 20px;
+	user-select: none;
+	margin-left:1vw;
+	z-index: 2;
+	color:#2ad69b;
+}
+
+.next {
+	right: 0;
+	margin-right:1vw;
+}
+
+.affiches1 a:hover {
+	/*color: #be7eff;*/
+	color: #76ff93;
+}
+
+/* ---------- AREA C - Affiches  ---------- */
+
+#areaC {
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:40vw;
+	width:20vw;
+	height:100vh;
+	border-left: 10px solid #b45eff;
+	border-right: 10px solid #b45eff;
+/*	right:0vw;*/
+  	overflow:auto;
+ 	/*background-color: #2ad69b;*/
+ 	background-color: #f7fbfa;
+}
+
+
+.credits {
+	font-family: 'Amiamie Round';  			/*modifié par clara*/
+	font-size: 15px;
+	text-align: left;
+	padding-left:20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 5px;
+}
+
+.credits p {
+	margin:0px;
+}
+
+#boite {
+	/* height: 40px; */    				  /*modifié par clara*/
+	border-bottom: 10px solid #b45eff;
+}
+
+.liens {
+	font-family: "Amiamie Black Round";
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 20px;
+	color:#b45eff;
+	padding-top:15px;
+	padding-bottom: 15px;
+}
+
+.contact {
+	font-family: 'Amiamie Round'; 			/*modifié par clara*/
+	color:#b45eff;
+}
+
+.téléchargement {
+	font-family: "Amiamie Round";
+	font-size: 15px;
+	text-align: center;
+}
+
+.photo {
+	border-bottom: 10px solid #b45eff;
+	width:100%;
+}
+
+img {
+	position: relative;
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+
+/*Responsive qui marche*/
+
+    @media screen and (max-width: 800px) {
+		
+		body {
+			overflow-x: hidden;
+			overflow: auto;
+			margin: 0px;
+		}
+				
+		.tw {
+		  padding-top: 10px;
+		}
+		
+        #areaA {
+      position: relative;
+			top: 0px;
+			bottom: 0px;
+			width: 100vw;
+			margin-bottom: 20px;
+        }
+
+        #areaB {
+          width: 100vw;
+		position: relative;		
+			padding-top:0;
+			width: 100vw;
+			left: 0px;
+			top: 0px;
+			border-top: 10px solid #2ad69b;
+			border-bottom: 10px solid #2ad69b;
+			border-left:none;
+			height: auto;
+        }
+
+        #areaC{
+        	width:100%;
+        	position: relative;
+			top: 0px;
+			overflow: unset;
+			border-right:none;
+			border-left:none;
+			right:0vw;
+			left:auto;
+        }
+		
+		.logo {
+		  position: relative;
+		  margin-top: 20px;
+		  margin-bottom: 20px;
+		  width: 80%;
+		  
+		}
+		
+		.scroller {
+		  position: relative;
+		  top: 0px;
+		  right: 0px;
+		  overflow:unset;
+		}
+		
+		.credits {
+		  padding: 20px;
+		}
+		
+		.affiches {
+			margin: auto;
+			height: 120vw;
+			margin-bottom: 15vw;
+		}
+		
+		.affiches > div {
+		  width: auto;
+		  position: absolute;
+		  margin-right: 0px;
+		}
+		
+		.affichespaysage {
+		  position: relative;
+		  height: auto;
+		  margin: auto;	
+		  margin-top: 40vw;
+		}
+			
+		.affichespaysage > div {
+		  width: auto;
+		  position: relative;
+		}
+	}
+
+
+/*-------------PAGE PRESSE---------------------------*/
+
+body {
+	margin: 0px;
+}
+
+#col_gauche {
+	position: absolute;
+	top: 0px;
+	left: 30px;
+	bottom: 0px;
+	width: 65vw;
+}
+
+.logo2 {
+	max-width: 480px;
+	margin-top: 20px;
+}
+
+#presse_header {
+	height: auto;
+	margin: 5px;
+	margin-bottom: 30px;
+	margin-left: 35px;
+}
+
+#presse_header .titre {
+	position: absolute;
+	font-size: 50px;
+	margin-top:40px;
+	white-space: nowrap;
+	font-family: "Amiamie Round";
+	color:#b45eff;
+	z-index:2;
+}
+
+
+.titre a {
+	color:#b45eff;
+}
+
+
+#presse_contenu {
+	padding-right:40px;
+	margin-left: 50px;
+	
+}
+
+#presse_scroller {
+	position: absolute;
+	top: 330px;
+	bottom: 0px;
+	right: 0px;
+	left: 140px;
+	overflow: auto;
+	width: 70%;
+		margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin-top:0px;
+	margin-left: 35px;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-transform: uppercase;
+}
+
+ul {
+	list-style-type: "→"; 
+	margin: 0px;
+	width: 85%;
+}
+
+::marker {
+	color:#2ad69b;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: "Amiamie Round";
+}
+
+li {
+	padding-left: 10px;
+	page-break-inside: avoid;
+}
+
+.presse_lien {
+	display: block;
+	
+}
+
+h2 {
+	margin-bottom: 5px;
+	font-size: 24px;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top: 0px;
+}
+
+h3 {
+	margin-top: 5px;
+	font-size: 18px;
+	font-weight: normal;
+	
+}
+
+#col_droite {
+	border-right: 10px solid #2ad69b;
+	border-left: 10px solid #2ad69b;
+	height:100%;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 30vw;
+}
+
+#col_droite img {
+	width:100%;
+	border-bottom: 10px solid #2ad69b;
+}
+
+#presse_credits {
+	padding: 20px;
+	font-size: 18px;
+}
+
+#presse_contact_esp {
+	margin-top:20px;
+}
+
+#presse_credits p {
+	margin-top:0px;
+}
+
+
+@media only screen and (max-width:800px) {
+	
+	body {
+		overflow: scroll; !important
+	}
+	
+	#col_gauche {
+	  position: relative;
+	  top: 5px;
+	  left: 5px;
+	  bottom: 0px;
+	  width: 90vw;
+	  margin-bottom: 20px;
+	}
+
+	#col_droite {
+		border: none;
+		width: 100vw;
+		position: relative;
+		border-top: 10px solid #2ad69b;
+	}
+	
+	#presse_header {
+		height: auto;
+	}
+	
+	#presse_scroller {
+	  position: relative;
+	  top: 0px;
+	  overflow: auto;
+	  width: 90%;
+	margin: auto;
+	left: 1%;
+	}
+	
+#presse_contenu {
+	margin-left:0px;
+	padding-right:5px;
+}
+
+	#presse_image {
+	  position: relative;
+	}
+	
+	#presse_credits {
+	  position: relative;
+	  /* padding: 20px; */
+	}
+	
+	#presse_credits p {
+		line-height: 1.8;
+	}
+}
+
+
+
+
+/*-----------------FIN PAGE PRESSE----------------------*/
+
+
+/*-----------------FIN PAGE GUIDE---------------------*/
+
+#liste_guide {
+  margin: auto;
+    margin-top: auto;
+  margin-top: 50px;
+  width: 90%;
+}
+
+#liste_guide h2 {
+	margin-bottom: 20px;
+}
